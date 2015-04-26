@@ -1,4 +1,5 @@
 var React = require('react-native');
+var Profile = require('./profile');
 
 var {
 	Text,
@@ -40,16 +41,41 @@ class Dashboard extends React.Component{
 			obj.backgroundColor = '#758BF4'
 		}
 
-		return obj;
+		return obj
 	}
 	goToProfile(){
-		
+		this.props.navigator.push({
+		  component: Profile,
+		  title: 'Profile Page',
+		  passProps: {userInfo: this.props.userInfo}
+		})
 	}
 	goToRepos(){
-
+		api.getRepos(this.props.userInfo.login)
+		  .then((jsonRes) => {
+		    this.props.navigator.push({
+		      component: Repositories,
+		      title: "Repositories Page",
+		      passProps: {
+		        repos: jsonRes,
+		        userInfo: this.props.userInfo
+		      }
+		    });
+		  })
 	}
 	goToNotes(){
-
+		api.getNotes(this.props.userInfo.login)
+		  .then((jsonRes) => {
+		    jsonRes = jsonRes || {};
+		    this.props.navigator.push({
+		      component: Notes,
+		      title: 'Notes',
+		      passProps: {
+		        notes: jsonRes,
+		        userInfo: this.props.userInfo
+		      }
+		    });
+		  });
 	}
 	render(){
 		return (
