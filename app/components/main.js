@@ -102,7 +102,7 @@ class Main extends React.Component{
 		);
 		return (
 			<View style={styles.mainContainer}>
-				<Text style={styles.title}> Search for a GitHub User </Text>
+				<Text style={styles.title}> Search GitHub Users </Text>
 				<TextInput
 					style={styles.searchInput}
 					value={this.state.username}
