@@ -1,5 +1,6 @@
 var React = require('react-native');
 var api = require('../utils/api');
+var Dashboard = require('./dashboard');
 
 var {
 	View,
@@ -73,8 +74,8 @@ class Main extends React.Component{
 		this.setState({
 			isLoading: true
 		});
-		console.log("Submit", this.state.username);
-		api.gitBio(this.state.username)
+		// console.log("Submit", this.state.username);
+		api.getBio(this.state.username)
 			.then((res) => {
 				if(res.message === 'Not Found'){
 					this.setState({
