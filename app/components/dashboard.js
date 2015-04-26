@@ -1,5 +1,8 @@
 var React = require('react-native');
 var Profile = require('./profile');
+var api = require('../utils/api');
+var Badge = require('./badge');
+var Repositories = require('./repositories');
 
 var {
 	Text,
