@@ -1,7 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
 var React = require('react-native');
@@ -22,17 +18,17 @@ var styles = StyleSheet.create({
   },
 })
 
-class githubNotetaker extends React.Component{
+class GitHubble extends React.Component{
   render() {
     return (
       < NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'GitHub Navigator',
+          title: 'GitHubble',
           component: Main
         }} />
     );
   }
 };
 
-AppRegistry.registerComponent('githubNotetaker', () => githubNotetaker);
+AppRegistry.registerComponent('GitHubble', () => GitHubble);

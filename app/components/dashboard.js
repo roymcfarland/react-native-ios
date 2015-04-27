@@ -3,6 +3,7 @@ var Profile = require('./profile');
 var api = require('../utils/api');
 var Badge = require('./badge');
 var Repositories = require('./repositories');
+var Notes = require('./notes');
 
 var {
 	Text,
@@ -77,7 +78,7 @@ class Dashboard extends React.Component{
 		        notes: jsonRes,
 		        userInfo: this.props.userInfo
 		      }
-		    });
+		    })
 		  });
 	}
 	render(){
