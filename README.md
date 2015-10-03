@@ -1,2 +1,1 @@
-# React Native (iOS)
-iOS app built with React Native
+# iOS app built with React Native
